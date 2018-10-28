@@ -1,15 +1,14 @@
-﻿function stringRotate(a, b){
-  for( var i=0; i<b; ++i){
-    var pom = a.charAt(0);
-    var p; 
-    a = a.replace(a.charAt(0), '$');
-    for( var j=1;j<a.length; ++j)
+function stringRotate(a, b){
+  var n;
+  for( var i=0; i<b; ++i)
+  { n = a.charAt(1);
+    if(a.length>2)
+    for (var j=2; j<a.length; ++j)
       {
-        p = a.charAt(j);
-        a = a.replace (a.charAt(j), '$');
-        a = a.replace('$', p);
+        n = n + a.charAt(j);
       }
-    a = a.replace('$', pom);
+   n = n + a.charAt(0);
+   a = n;
   }
   return a;
 }

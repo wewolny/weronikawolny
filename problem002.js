@@ -1,5 +1,7 @@
 function stringRotate(a, b){
   var n;
+  if(b>=0)
+  {
   for( var i=0; i<b; ++i)
   { n = a.charAt(1);
     if(a.length>2)
@@ -11,4 +13,6 @@ function stringRotate(a, b){
    a = n;
   }
   return a;
+  }
+  else return "";
 }

@@ -1,7 +1,5 @@
 var Vectors = {
   sum: function(a,b){
-    if(!Array.isArray(a)||!Array.isArray(b))
-      return false;
     for(var i=0; i<a.length; i++)
       if(typeof a[i]!='number')
         return false;
@@ -22,8 +20,6 @@ var Vectors = {
     return tab;
   },
   mulByScalar: function(a,b){
-    if(!Array.isArray(a))
-      return false;
      for(var i=0; i<a.length; i++)
       if(typeof a[i]!='number')
         return false;

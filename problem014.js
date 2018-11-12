@@ -6,6 +6,8 @@ var Vectors = {
     for(var i=0; i<b.length; i++)
       if(typeof b[i]!='number')
         return false;
+    if(a.length!=b.length)
+     return false;
     var pom;
     var na = a.slice();
     var nb = b.slice();

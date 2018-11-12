@@ -7,14 +7,16 @@ var Vectors = {
       if(typeof b[i]!='number')
         return false;
     var pom;
-    if(a.length<b.length){
-      pom=a;
-      a=b;
-      b=pom;
+    var na = a.slice();
+    var nb = b.slice();
+    if(na.length<nb.length){
+      pom=na;
+      na=b;
+      nb=pom;
     }
-    var tab = a;
-    for(var i=0; i<b.length; i++)
-      tab[i] += b[i];
+    var tab = na;
+    for(var i=0; i<nb.length; i++)
+      tab[i] += nb[i];
     return tab;
   },
   mulByScalar: function(a,b){

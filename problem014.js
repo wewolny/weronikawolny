@@ -1,16 +1,30 @@
-﻿var Vectors = {
+var Vectors = {
   sum: function(a,b){
     for(var i=0; i<a.length; i++)
-    if(a.length!=3||b.length!=3)
-      return false;
-    var tab = [(a[0]+b[0]),(a[1]+b[1]),(a[2]+b[2])]
+      if(typeof a[i]!='number')
+        return false;
+    for(var i=0; i<b.length; i++)
+      if(typeof b[i]!='number')
+        return false;
+    var pom;
+    if(a.length<b.length){
+      pom=a;
+      a=b;
+      b=pom;
+    }
+    var tab = a;
+    for(var i=0; i<b.length; i++)
+      tab[i] += b[i];
     return tab;
   },
   mulByScalar: function(a,b){
-    if(a.length!=3||typeof b!='number')
+     for(var i=0; i<a.length; i++)
+      if(typeof a[i]!='number')
+        return false;
+    if(typeof b!='number')
       return false;
     var tab = [];
-    for(var i=0; i<3; i++)
+    for(var i=0; i<a.length; i++)
       tab.push(a[i]*b);
     return tab;
   }

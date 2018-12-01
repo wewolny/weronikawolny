@@ -1,4 +1,4 @@
-﻿function carry(a) {
+function carry(a) {
     if (a.length == 0) return a;
       var args = [];
     return nest(a, 1, args);}
